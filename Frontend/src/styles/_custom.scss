@@ -1,0 +1,25 @@
+@import '../../node_modules/bootstrap/scss/_mixins';
+@import './_variables';
+@import './_utilities';
+@import './_mixins';
+@import './_buttons'; //classes
+@import './_navbar';  //variabs
+@import './inputs'; //variabs
+@import './accordions'; //classes
+
+// @import "../../node_modules/bootstrap/scss/buttons";
+// @import "../../node_modules/bootstrap/scss/accordion";
+// @import "../../node_modules/bootstrap/scss/forms";
+//es pot especificar més, dins de forms
+
+//CARD
+.card > .card-footer {
+        border-top: 1px solid $main-600;
+}
+
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+
+
+

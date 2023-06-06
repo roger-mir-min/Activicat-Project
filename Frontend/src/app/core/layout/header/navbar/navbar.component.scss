@@ -1,0 +1,240 @@
+@import '/src/styles/_variables';
+@import '/src/styles/utilities';
+
+@media only screen and (max-width: 767px) {
+  .rounded-pill{
+    width: 40% !important;
+  }
+
+  .collapse{
+    margin-top: 0px;
+  }
+
+    .border-bottom-expanded{
+      border-bottom: 2px solid $main-dark !important;
+    }
+
+    .border-top-expanded {
+      border-top: 2px solid $main-dark;
+    }
+  
+  //?
+  .hover-sub, .hover-sub-expanded {
+    border-bottom: 1px solid $main-dark;
+  }
+
+  .hover-sub:hover, .hover-sub-expanded:hover{
+    background-color: $main-100;
+  }
+
+  .hover-sub::before, .hover-sub-expanded::before{
+    display: none;
+  }
+
+  //Per si està obert i es redueix la pantalla
+  .dropdown-menu-right{
+    display: none !important;
+  }
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    height: 4.7em;
+    width: 100%;
+    font-size: 1.1em;
+    background-color: white !important;
+    color: $main-dark;
+    border-bottom: 2px solid $main-dark !important;
+}
+
+.navbar-brand{
+  color: $main-dark;
+  transition: 1s;
+  margin-bottom: 14.72px;
+
+  &:hover{
+    color: $main-300;
+    transition: 1s;
+  }
+}
+
+.navbar-nav{
+  background-color: white;
+}
+
+.nav-item{
+  background-color: white;
+}
+
+.nav-link{
+    color: $main-dark;
+    cursor: pointer;
+
+    &:hover{
+      color: $main-300;
+    }
+}
+
+.fa-regular{
+  font-size: 0.8em;
+}
+
+.btn-login{
+  border: 1px solid $main-dark;
+  color: $main-dark;
+
+  &:hover{
+    color: white;
+    border: 1px solid white !important;
+    background-color: $main-dark;
+  }
+}
+
+.navbar-toggler{
+  border: none;
+}
+
+.fa-regular{
+  text-align: center;
+}
+
+.logout-icon{
+  height: 1em;
+}
+
+//Aquesta classe apareix quan s'obre el dropdown
+.dropdown-menu-right {
+  top: 4.9em !important;
+  right: 0em !important;
+  left: auto !important;
+  background-color: $main-100;
+  color: $main-dark;
+  border: 1px solid $main-dark;
+
+  &:hover{
+    background-color: $main-200 !important;
+  }
+
+  &:hover .dropdown-item {
+    background-color: $main-200 !important;
+  }
+}
+
+.dropdown-item{
+  background-color: $main-100 !important;
+  color: $main-dark;
+
+  &:hover{
+    background-color: $main-200 !important;
+    color: $main-dark;
+  }
+
+  &:active{
+    color: $main-dark;
+  }
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+  box-shadow: 0 0 3px 3px white;
+}
+
+.navbar-toggler-icon{
+background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{url-friendly-colour($main-dark)}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+}
+
+//hover for main nav-links
+
+.hover-sub{
+    position: relative;
+
+    &::before {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 2px;
+    border-radius: 4px;
+    background-color: $main-300;
+    bottom: 0;
+    margin: 0 10%;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+}
+
+  &:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+}
+
+
+//hover glow effect for signup button
+@keyframes TransitioningBackground {  
+  
+  100% {
+    transform: translateX(300px) skewX(-15deg);
+        transition: 1.5s;
+  }
+}
+
+.subscribe-button {
+  color: $main-dark;
+  text-align: center;
+  // for shine & gradient effects to work
+  position: relative;
+  overflow: hidden;
+  background-color: $primary;
+  // for background color shift
+//   background-size: 200% 400%;
+  // to ease the button growth on hover
+  transition: 0.6s;
+
+  // psuedo-element shine animation left side
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: white;
+    width: 30%;
+    height: 100%;
+    top: 0;
+    filter: blur(30px);
+    transform: translateX(-100px) skewX(-15deg);
+  }
+
+  // psuedo-element shine animation right side
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: white;
+    width: 15%;
+    height: 100%;
+    top: 0;
+    filter: blur(5px);
+    transform: translateX(-100px) skewX(-15deg);
+  }
+
+  &:after,
+  &:before{
+    animation: TransitioningBackground 3s ease infinite;
+  }
+
+  // grow button and change background gradient on hover
+  &:hover {
+    cursor: pointer;
+    color: white;
+    background-color: $primary-dark;
+
+    // psuedo-elements for right- and left-side shine animations
+    &::before,
+    &::after {
+      transform: translateX(300px) skewX(-15deg);
+      transition: 1.5s;
+    }
+  }
+}

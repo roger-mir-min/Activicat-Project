@@ -1,0 +1,82 @@
+//AMBIT COLORS --map to access them in property value (ambit.component.scss)
+
+//Ortografia
+$ortografia-200: #e7c193;
+$ortografia-300: #f0d9bd;
+$ortografia-400: #e9b87b;
+$ortografia-500: #e7ae69;
+$ortografia-600: #e4983b;
+$ortografia-800: #663b07;
+$ortografia: $ortografia-400;
+
+//els definim en map per poder-los seleccionar des de mixin a ambits.scss
+$ortografia-colors: (
+    '200': #e7c193,
+    '300': #f0d9bd,
+    '400': #e9b87b,
+    '500': #e7ae69,
+    '600': #e4983b,
+    '800': #663b07
+);
+
+//Gramàtica
+$gramàtica-200: #b5dde4;
+$gramàtica-300: #a9dbe4;
+$gramàtica-400: #89c0ca;
+$gramàtica-500: #68a9b4;
+$gramàtica-600: #4e9eac;
+$gramàtica-800: #1b444b;
+$gramàtica: $gramàtica-400;
+
+$gramàtica-colors: (
+    '200': $gramàtica-200,
+    '300': $gramàtica-300,
+    '400': $gramàtica-400,
+    '500': $gramàtica-500,
+    '600': $gramàtica-600,
+    '800': $gramàtica-800
+);
+
+//Literatura
+
+$literatura-200: rgb(163, 224, 179);
+$literatura-300: rgb(139, 223, 160);
+$literatura-400: rgb(86, 223, 120);
+$literatura-500: rgb(54, 226, 97);
+$literatura-600: rgb(33, 180, 70);
+$literatura-800: rgb(18, 88, 35);
+$literatura: $literatura-400;
+
+$literatura-colors: (
+    '200': $literatura-200,
+    '300': $literatura-300,
+    '400': $literatura-400,
+    '500': $literatura-500,
+    '600': $literatura-600,
+    '800': $literatura-800
+);
+
+//DIALECTES
+$dialectes-200: #f3ec9e;
+$dialectes-300: #f1e881;
+$dialectes-400: #f1e561;
+$dialectes-500: #f5e534;
+$dialectes-600: #8f8412;
+$dialectes-800: #5e5606;
+$dialectes: $dialectes-400;
+
+$dialectes-colors: (
+    '200': $dialectes-200,
+    '300': $dialectes-300,
+    '400': $dialectes-400,
+    '500': $dialectes-500,
+    '600': $dialectes-600,
+    '800': $dialectes-800
+);
+
+$color-maps: (
+    'ortografia': $ortografia-colors,
+    'gramàtica': $gramàtica-colors,
+    'literatura': $literatura-colors,
+    'dialectes': $dialectes-colors
+);

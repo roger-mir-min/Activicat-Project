@@ -1,0 +1,16 @@
+.auto-grow-input {
+    display: inline-block;
+    height: 1.2em;
+    min-width: 2rem;
+    max-width: 100%;
+    /* Set this to the maximum width you want for your input */
+    overflow: hidden;
+    resize: none;
+    box-sizing: content-box;
+    transition: width 0.2s ease;
+}
+
+form{
+    line-height: 2em;
+}
+

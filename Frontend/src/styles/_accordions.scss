@@ -1,0 +1,23 @@
+//ACCORDION
+//border-radius for nested accordions
+.accordion .accordion div.accordion-item{
+    &:first-of-type .accordion-button.collapsed{
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+    &:not(:first-of-type) .accordion-button.collapsed{
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-top-left-radius: 0px;
+    }
+    &:last-of-type .accordion-button.collapsed{
+        border-top-right-radius: 0px;
+        border-top-left-radius: 0px;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+    &:last-of-type:first-of-type .accordion-button.collapsed{
+        border-radius: 5px;
+    }
+}

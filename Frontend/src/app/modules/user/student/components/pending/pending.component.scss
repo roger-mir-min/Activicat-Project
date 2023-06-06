@@ -1,0 +1,18 @@
+@import '/src/styles/_variables';
+
+.deures-card.bg-indi200{
+    background-color: $main-200;
+    &:hover{
+    background-color: $main-300;
+    }
+}
+
+
+.max-width{
+    max-width: 44em;
+}
+
+a.feslo{
+    text-decoration: none;
+    font-weight: bold;
+}

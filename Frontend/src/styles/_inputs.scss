@@ -1,0 +1,30 @@
+//INPUT
+// $input-bg: ;
+// $input-box-shadow:; //no apareix
+$input-border-color: $main-dark;
+$input-color: $main-dark;
+$input-focus-color: $main-dark; //color de lletra en escriure-hi
+$input-focus-bg: $main-100; //input-bg és white, així es nota una mica la dif
+$input-focus-box-shadow: 0 0 2px 0.2rem $main-300;
+$input-focus-border-color: $main-600; //obvi: border amb focus
+
+//per contrarrestar auto-fill color
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px $input-bg inset;
+}
+
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px $main-100 inset;
+}
+
+input {
+    caret-color: $main-dark;
+}
+
+//SELECT
+$form-select-color: $main-dark;
+$form-select-border-color: $main-dark; //s'hauria de modularitzar, input és igual
+$form-select-focus-border-color: $main-600; //ídem
+$form-select-focus-box-shadow: 0 0 2px 0.2rem $main-300; //ídem

@@ -1,0 +1,40 @@
+<!-- Sidebar  -->
+    <!-- <nav id="mySidebar" class="d-flex active" [ngClass]="{'active': currentUser && isActive, 'notActive': currentUser && !isActive}">
+        <ul class="list-unstyled ms-3">
+            <li *ngIf="currentUser"> -->
+                <!-- <img alt="foto d'usuari" class="img-width" src="{{currentUser.img}}"> -->
+            <!-- </li>
+            <li *ngIf="currentUser" class="active"> -->
+                <!-- <a routerLink="user/profile" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-bs-toggle"> -->
+                    <!-- <i class="fas fa-home"></i> -->
+                    <!-- Hola, {{currentUser.nom}} -->
+                <!-- </a> -->
+            <!-- </li>
+            <li>
+                <a routerLink="user/profile">Canvia la configuració del perfil</a>
+            </li>
+            <li>
+                <a routerLink="user/student">El meu espai d'estudiant</a>
+            </li>
+            <li *ngIf="currentUser && currentUser.role == 1">
+                <a routerLink="user/teacher">El meu espai de professor</a>
+            </li>
+            <li>
+                <a routerLink="user/student/pending">Deures pendents</a>
+            </li>
+            <li>
+                <a routerLink="user/student/history">Historial</a>
+            </li>
+            <li>
+                <span (click)="onAnchorClick('student', 'grups')">Grups</span>
+            </li>
+            <li (click)="logout()">
+                Logout
+            </li>
+        </ul>
+        <button class="openbtn" (click)="toggleNav()"> ></button>
+    </nav> -->
+<div id="main" class="pt-4" [ngClass]="{'active': currentUser && isActive, 'notActive': currentUser && !isActive}">
+<router-outlet></router-outlet>
+</div>
+

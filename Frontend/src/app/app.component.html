@@ -1,0 +1,24 @@
+<div class="wrapper">
+<app-header></app-header>
+<app-body class="pb-4"></app-body>
+<app-footer></app-footer>
+<div class="loading-spinner-container" *ngIf="(loading$|async)">
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+<div class="loading-gif-container" *ngIf="(loadingGif$|async)">
+        <img alt="gif" src="../assets/gifs/celeb-gif.gif">
+        <img alt="gif" src="../assets/gifs/celeb-gif.gif">
+        <img alt="gif" src="../assets/gifs/celeb-gif.gif">
+        <img alt="gif" src="../assets/gifs/celeb-gif.gif">
+    
+</div>
+<div class="loading-gif-container2" *ngIf="(loadingGif$|async)">
+        <img alt="gif" src="../assets/gifs/celeb-gif.gif">
+        <img alt="gif" src="../assets/gifs/celeb-gif.gif">
+        <img alt="gif" src="../assets/gifs/celeb-gif.gif">
+        <img alt="gif" src="../assets/gifs/celeb-gif.gif">
+    
+</div>
+</div>

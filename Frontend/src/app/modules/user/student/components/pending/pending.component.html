@@ -1,0 +1,40 @@
+<div class="main-wrapper p-4">
+<h3 class="mb-3">Deures pendents <i class="fa-solid fa-list-check"></i></h3>
+<div class="wrapper row max-width g-0 mx-auto">
+<ng-container *ngFor="let deures of (deures_pendents$ | async); let i = index">
+  <div class="deures-card col-12 d-flex justify-content-around border-dark mb-3 p-3 rounded bg-indi200">
+   <div class="">
+    <div *ngIf="deures.nom_deure"><b>
+      {{i}}. Descripció: {{deures.nom_deure}}.
+      <a class="d-sm-none feslo" routerLink="/ex/{{deures.activitat_id}}${{deures.id_deure}}">FES-LO</a>
+      </b>
+    </div>
+    <div> Grup: {{deures.nom_grup}}. Professor: {{deures.nom_profe}}</div>
+    <div [style.color]="(deures.data_finalitzacio | isExpired) ? 'red' : 'inherit'">Pots entregar-lo fins el {{deures.data_finalitzacio | date:'medium'}}</div>
+  </div>
+  <div class="right d-sm-flex d-none">
+    <a class="align-self-center feslo" routerLink="/ex/{{deures.activitat_id}}${{deures.id_deure}}">FES-LO</a>
+  </div>
+  </div>
+</ng-container>
+</div>
+<div *ngIf="(deures_pendents$|async)?.length == 0">No tens deures pendents</div>
+</div>
+<!-- 
+<body>
+<h3>Pendents</h3>
+<div class="container">
+<div class="cards">
+<ng-container *ngFor="let deures of (deures_pendents$ | async); let i = index">
+  <div class="card">
+  <div>{{i}}. </div>
+  <div class="card-title">Deures del grup: {{deures.nom_grup}}</div>
+  <div class="">Professor: {{deures.nom_profe}}</div>
+  <div class="date" [style.color]="deures.data_finalitzacio < getCurrentTime() ? 'red' : 'inherit'">Pots entregar-lo fins el {{deures.data_finalitzacio | date:'medium'}}</div>
+ <div class="description"><span *ngIf="deures.nom_deure">{{deures.nom_deure}}: </span><a routerLink="/ex/{{deures.activitat_id}}${{deures.id_deure}}">fes-lo</a></div>
+</div>
+</ng-container>
+</div>
+</div>
+<div *ngIf="(deures_pendents$|async)?.length == 0">No tens deures pendents</div>
+</body> -->

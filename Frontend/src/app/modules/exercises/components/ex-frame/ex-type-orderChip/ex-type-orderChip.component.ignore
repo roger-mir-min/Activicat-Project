@@ -1,0 +1,66 @@
+// import { Component, OnInit } from '@angular/core';
+// import { Exercici } from 'src/app/shared/models/interfaces';
+
+// @Component({
+//   selector: 'app-ex-type-orderChip',
+//   templateUrl: './ex-type-orderChip.component.html',
+//   styleUrls: ['./ex-type-orderChip.component.scss']
+// })
+// export class ExTypeOrderChipComponent implements OnInit {
+
+
+//   //es rep de servei-API objecte exercici
+//   ex: Exercici = { frases: [{ start: "Angular" }, { start: "Materials" }, { start: "és" }, { start: "genial" }, {start: "avorrit"}], punts: 10 };
+//   availableWords: string[] = [];
+//   selectedWords: string[] = [];
+
+//   answerIsValid: boolean;
+
+//   constructor() { }
+
+//   ngOnInit() {
+//     //Create a copy of the array frases and sort it randomly
+//     const frasesCopy = [...this.ex.frases];
+//     function randomSort(a, b) {
+//     return Math.random() - 0.5;
+//     }
+//     frasesCopy.sort(randomSort);
+
+//     //Push the new elements into availableWords array
+//     frasesCopy.forEach(frase => {
+//       this.availableWords.push(frase.start);
+//       })
+//   }
+
+
+//   selectWord(word: string) {
+//     //Default function for the chip
+//     this.selectedWords.push(word);
+//     this.availableWords = this.availableWords.filter(w => w !== word);
+
+//     //When all the words have been clicked, 
+//     if (this.selectedWords.length == (this.ex.frases.length - 1)) {
+//       //Create compArray with all the words in the original order
+//       const compArray: string[] = [];
+//       this.ex.frases.forEach((frase, i) => {
+//         if(i==this.ex.frases.length-1){return}
+//         compArray.push(frase.start);
+//       });
+
+//       //If compArray is equal to selectedWords array, the answer is correct
+//       if (this.selectedWords.toString() == compArray.toString()) {
+//         console.log("Resposta CORRECTA");
+//         this.answerIsValid = true;
+//       }else{
+//         console.log("Resposta incorrecta");
+//         this.answerIsValid = false;
+//       }
+//     }
+//   }
+
+//   deselectWord(word: string) {
+//     this.availableWords.push(word);
+//     this.selectedWords = this.selectedWords.filter(w => w !== word);
+//   }
+
+// }

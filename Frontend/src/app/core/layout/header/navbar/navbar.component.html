@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-md navbar-light text-white fixed-top">
+  <a class="navbar-brand ms-4 text-patua" routerLink="home">Activi<b>Cat</b></a>
+  <button class="navbar-toggler me-4 hidden-sm-up" type="button" (click)="this.isCollapsed = !this.isCollapsed" data-target="#navbarNav" aria-expanded="false" aria-controls="navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div [ngbCollapse]="isCollapsed" class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav d-flex text-center">
+      <li class="nav-item">
+        <a class="nav-link hover-sub border-top-expanded" (click)="onAnchorClick('home', undefined)">Portada</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link hover-sub" (click)="onAnchorClick('main-list', undefined)">Activitats</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link hover-sub" (click)="onAnchorClick('home', 'overview')">Què és?</a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link hover-sub" (click)="onAnchorClick('home', 'aboutus')">Qui som?</a>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link hover-sub" (click)="onAnchorClick('home', 'aboutus')"><span>Contacte  </span> <i class="fa-regular fa-envelope"></i></a>
+      </li>
+      <li class="nav-item" *ngIf="currentUser$ | async as currentUser">
+        <a class="nav-link hover-sub" (click)="navigateUser(currentUser)">El meu espai</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ms-auto me-md-4 d-flex align-items-center" *ngIf="(isLoggedIn$ | async) == true; else noLog">
+      <li class="nav-item hover-sub-expanded py-2 py-md-0 pt-md-1 me-md-2 w-100" ngbDropdown>
+        <a class="nav-link cursor-none d-flex flex-column py-0">
+          <div class="d-none d-md-inline text-center">
+            <img *ngIf="( userImg$ | async ) as userImg; else icon" [src]="userImg" alt="User image" width="40em" height="40em" class="rounded-circle d-inline mx-auto">
+            <ng-template #icon>
+              <i class="fa-regular fa-user"></i>
+            </ng-template>
+          </div>
+          <small class="dropdown-toggle cursor-pointer d-none d-md-inline" id="profileDropdown" ngbDropdownToggle>{{ (currentUser$ | async)?.nom }}</small>
+          <span class="text-center cursor-pointer d-inline d-md-none" routerLink="user/profile" (click)="closeCollapse()">Configuració <i class="fa-solid fa-gear"></i></span>
+        </a>
+          <div ngbDropdownMenu aria-labelledby="profileDropdown" class="dropdown-menu-right">
+            <a class="dropdown-item text-center" routerLink="user/profile">Configuració <i class="fa-solid fa-gear"></i></a>
+          </div>
+      </li>
+
+      <li class="nav-item p-2 p-md-0 w-100 hover-sub-expanded text-center border-bottom-expanded">
+        <a class="nav-link p-0" (click)="logout()"><i class="fa-solid fa-arrow-right-from-bracket logout-icon"></i></a>
+      </li>
+    </ul>
+
+    <ng-template #noLog>
+      <ul class="navbar-nav ms-auto me-md-4 border-bottom-expanded text-center">
+        <li class="nav-item me-md-2 my-3 my-md-0">
+          <a class="btn btn-login rounded-pill px-4 me-md-2 mx-auto" routerLink="/login" (click)="closeCollapse()">Entra</a>
+        </li>
+        <li class="nav-item mb-3 mb-md-0">
+          <a class="btn subscribe-button rounded-pill px-3 mx-auto" routerLink="/signup" (click)="closeCollapse()"> Registra't </a>
+        </li>
+      </ul>
+    </ng-template>
+  </div>
+</nav>

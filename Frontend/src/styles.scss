@@ -1,0 +1,82 @@
+// @import '~@angular/material/theming';
+// @include mat-core();
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+@import 'styles/_custom.scss';
+@import './styles/tables';
+
+@font-face {
+    font-family: "PatuaOne";
+    src: local("PatuaOne"), url('./assets/fonts/PatuaOne-Regular.ttf') format("truetype");
+}
+
+.text-patua {
+    font-family: "PatuaOne";
+}
+
+html,
+body {
+    max-height: 100%;
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: "Calibri";
+    color: $main-dark;
+    position: relative
+}
+
+//LISTS
+ul {
+    list-style-type: square;
+}
+
+//HEIGHT
+.text-min-h{
+    min-height: 1.5em;
+}
+
+//BORDER, BORDER-RADIUS
+.border-main {
+    border: 1px solid $main-dark;
+}
+
+.border-strong {
+    border: 3px solid $main-dark;
+}
+
+.border-dashed{
+    border: 1px dashed $main-dark;
+}
+
+.shadow-blue {
+    box-shadow: 5px 5px 0px 0px $main-dark;
+}
+
+//HOVER
+.hover-transp:hover {
+    opacity: 0.5;
+}
+
+.hover-600:hover{
+    color: $main-600;
+}
+
+//CURSOR
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.cursor-none{
+    cursor: auto !important;
+}
+
+//FLEX
+.flex-gap{
+    gap: 1em;
+}
+
+.flex-gap-2{
+    gap: 2em;
+}

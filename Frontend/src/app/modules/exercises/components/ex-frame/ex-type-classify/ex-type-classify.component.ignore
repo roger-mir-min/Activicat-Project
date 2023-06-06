@@ -1,0 +1,30 @@
+// import { Component, OnInit } from '@angular/core';
+// import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+
+// @Component({
+//   selector: 'app-ex-type-classify',
+//   templateUrl: './ex-type-classify.component.html',
+//   styleUrls: ['./ex-type-classify.component.scss']
+// })
+// export class ExTypeClassifyComponent {
+
+// colOne = ["Got", "Canto", "Tovallola", "Servei", "Servir"];
+
+//   colTwo = [];
+  
+//   colThree = [""];
+
+//   drop(event: CdkDragDrop<string[]>) {
+//     if (event.previousContainer === event.container) {
+//       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+//     } else {
+//       transferArrayItem(
+//         event.previousContainer.data,
+//         event.container.data,
+//         event.previousIndex,
+//         event.currentIndex,
+//       );
+//     }
+//   }
+
+// }

@@ -1,0 +1,19 @@
+@import '/src/styles/variables';
+
+.table-container {
+    overflow-x: auto;
+}
+
+.btn:has(i){
+    color: $primary-dark;
+}
+
+.mat-column-nom,
+.mat-column-punts,
+.mat-column-error,
+.mat-column-data,
+.mat-column-complet,
+.mat-column-resposta {
+    text-align: center;
+    width: 16.6%;
+}

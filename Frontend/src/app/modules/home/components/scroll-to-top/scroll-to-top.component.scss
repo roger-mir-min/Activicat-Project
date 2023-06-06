@@ -1,0 +1,30 @@
+@import '/src/styles/_variables';
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    opacity: 0;
+    transition: all .1s ease-in-out;
+    z-index: 3;
+}
+
+.show-scrollTop {
+    opacity: 1;
+    transition: all .1s ease-in-out;
+}
+
+.btn{
+    border: 1px solid $main-dark !important;
+    color: $main-dark !important;
+    background-color: $main-200 !important;
+    &:hover{
+        background-color: $main-100 !important;
+    }
+}
+
+.arrow{
+    color: $main-600;
+    display: block;
+    width: 3em;
+}

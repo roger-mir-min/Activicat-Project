@@ -1,0 +1,27 @@
+@import '/src/styles/_variables';
+
+@mixin color-class($color) {
+    background-color: $color;
+    border-radius: 0px;
+
+    &:hover {
+        background-color: $color;
+        opacity: 0.5;
+    }
+}
+
+.lite {
+    @include color-class($literatura);
+}
+ 
+.gram {
+    @include color-class($gramàtica);
+}
+
+.dial {
+    @include color-class($dialectes);
+}
+
+.ortog {
+    @include color-class($ortografia);
+}

@@ -1,0 +1,11 @@
+//TABLES
+.mat-mdc-cell.mdc-data-table__cell {
+    border-bottom: 1px solid $main-100;
+    color: $main-dark;
+}
+
+.mat-mdc-header-cell.mdc-data-table__header-cell {
+    border-bottom: 1px solid $main-200;
+    color: $main-dark;
+    font-weight: bold;
+}

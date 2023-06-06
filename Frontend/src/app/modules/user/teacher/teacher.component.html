@@ -1,0 +1,75 @@
+<div class="p-4 p-md-5 position-relative">
+  <div class="d-block d-lg-flex justify-content-between mb-3">
+<h2 class="text-center">Benvingut al teu espai de professor, {{user.nom}}! <i class="fa-solid fa-chalkboard-user"></i></h2>
+<div class="text-center align-self-end">
+  <a routerLink="/user/student">Ves al meu espai d'estudiant <i class="fa-solid fa-graduation-cap"></i></a>
+</div>
+</div>
+
+  <!--DEURES SECTION-->
+<ng-container *ngIf="vm$ | async as vm">
+  <section class="bg-white border-strong p-4 mb-4">
+    <h4>Deures</h4>
+<div class="d-none d-md-block mb-3">Vols posar deures a un grup? <a routerLink="/main-list">Ves a la llista d'activitats</a>, entra a l'activitat
+que vulguis i encomana-la a un grup amb una data límit i una descripció.
+</div>
+<div>Tens <b>{{vm['deuresNotChecked']?.length}}</b> deures pendents de revisar <i class="fa-solid fa-list-check"></i></div>
+<div class="row g-3 g-md-4 justify-content-center mt-3">
+<ng-container *ngFor="let deure of vm['deuresNotChecked']; trackBy: trackByNom">
+  <div class="col-11 col-sm-10 col-md-6">
+    <div class="card border-strong p-3 bg-indigo-100 rounded hover-transp cursor-pointer">
+  <span>Grup: {{deure['grup_id']}}   |   Descripció: {{deure['nom_deure']}} </span>
+  <div class="d-flex justify-content-between mt-2">
+    <button routerLink="deures/{{deure['id_deure']}}" class="btn btn-indigo-200">Revisa-ho</button>
+    <button (click)="checkDeures(deure['id_deure'])" class="btn btn-primary">Ho he revisat <i class="fa-solid fa-check"></i></button>
+  </div>
+  </div>
+</div>
+</ng-container>
+</div>
+<div class="d-flex justify-content-center">
+  <button routerLink="history" class="btn d-inline btn-outline-indigo-800 my-4 mx-auto">Historial complet de deures <i class="fa-solid fa-clock-rotate-left"></i></button>
+</div>
+</section>
+
+<!--GRUPS SECTION--><!--GRUPS SECTION-->
+<section class="bg-white border-strong mb-3 py-4">
+  <h4 class="ms-4">Grups <i class="fa-solid fa-users"></i></h4>
+  <h5 class="ms-4">Els meus grups</h5>
+  <p class="ms-4">Proporciona l'identificador del grup (id) als alumnes que hi vulguis convidar. Pots copiar-lo clicant la icona.</p>
+  <div *ngIf="vm['grups'].length==0">No tens grups per mostrar</div>
+  <div class="row g-0 gy-3 gy-md-4">
+    <ng-container *ngFor="let grup of vm['grups']; trackBy: trackByNom">
+      <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center mx-auto mx-sm-0 px-4">
+        <div class="card d-flex justify-content-center bg-indigo-100 border-strong text-center">
+          <img src="../../../../assets/20.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{grup['nom']}}</h5>
+            <p class="card-text mb-0">id: {{grup['id_grup']}} <i class="fa-solid fa-copy cursor-pointer" (click)="copyIdToClipboard(grup['id_grup'])"></i></p>
+            <p class="card-text">{{grup['descripcio']}}</p>
+          </div>
+          <div class="card-footer">
+            <a routerLink="grups/{{grup['id_grup']}}" class="card-link">Ves al grup</a>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <div class="col-12 col-sm-6 col-md-6 col-lg-4 d-flex justify-content-center mx-auto mx-sm-0 px-4">
+      <div class="card d-flex justify-content-center border-strong bg-primary text-primary-dark text-center">
+        <img src="../../../../assets/40.jpg" class="card-img-top" alt="...">
+        <div class="card-body mb-3">
+          <h5 class="card-title">Crea un grup</h5>
+          <p class="card-text">Obre el desplagble i introdueix-hi nom i descripció.</p>
+        </div>
+        <div class="mb-3">
+          <app-create-group-form [user]="user"></app-create-group-form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</ng-container>
+
+<!-- Input crear grups: hauré de crear component a part -->
+</div>

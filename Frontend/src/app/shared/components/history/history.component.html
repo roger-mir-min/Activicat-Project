@@ -1,0 +1,18 @@
+<div class="p-4">
+<h3><i class="fa-solid fa-clock-rotate-left"></i> Historial d'activitats realitzades per {{(ownerOfHistory$ | async)?.nom}}</h3>
+<div>Les activitats en cursiva són deures. Els colors corresponen a l'àmbit de l'activitat.</div>
+<ng-container *ngIf="(historial$ | async) as historial">
+<ng-container *ngIf="historial.length > 0 else noHist">
+  <div class="table-container">
+  <app-table [historial]="historial" [userIsTeacher]="userIsTeacher" (scrollToParentDiv)="onScrollToParentDiv()"></app-table>
+</div>
+</ng-container>
+</ng-container>
+<ng-template #noHist>
+  <div>No hi ha elements a l'historial</div> 
+</ng-template>
+<br>
+<router-outlet></router-outlet>
+<div #targetDiv></div>
+</div>
+

@@ -1,0 +1,30 @@
+<div class="border p-3">
+  <div class="row h-100">
+    <div class="col-11 mx-auto">
+      <form class="d-flex flex-column justify-content-between h-100" [formGroup]="exForm" (ngSubmit)="submit(exForm.value)">
+        <div>
+        <ng-container *ngFor="let linia of arrayParts; let lineIndex = index">
+          - 
+          <ng-container *ngFor="let part of linia; let partIndex = index">
+            <span class="m-0 p-0">{{part}}</span>
+            <!-- Si no  és l'última línia ni l'última part de la línia, ni tampoc -->
+            <ng-container *ngIf="!((lineIndex === arrayParts.length - 1 || lineIndex === 0) && partIndex === linia.length - 1)"><input #inputElem [formControlName]="getGlobalIndex(lineIndex, partIndex)" type="text"
+              id="ctrl{{getGlobalIndex(lineIndex, partIndex)}}" class="auto-grow-input border-0"
+              (input)="adjustWidth($event.target)" [style.width.px]="inputWidth"
+              [ngStyle]="{'color': inputColor[getGlobalIndex(lineIndex, partIndex)],
+              'border-color': inputBorderColor[getGlobalIndex(lineIndex, partIndex)]}"
+              maxlength="15"/><span [id]="getGlobalIndex(lineIndex, partIndex)" *ngIf="isCompleted == true" [ngStyle]="{'color': inputColor[getGlobalIndex(lineIndex, partIndex)], 'display': inputDisplay[getGlobalIndex(lineIndex, partIndex)]}">{{respostes[getGlobalIndex(lineIndex, partIndex)]}}</span>
+            </ng-container>
+          </ng-container>
+          <br>
+        </ng-container>
+        </div>
+        <div class="text-center mt-3">
+        <button type="button" (click)="check()" class="btn btn-success" [disabled]="isChecked == true">Quants errors tinc?</button>
+        <button type="submit" class="btn btn-complementary ms-3 text-white" [disabled]="isCompleted">Envia</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

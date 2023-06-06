@@ -1,0 +1,17 @@
+{
+  "builds": [
+    {
+      "src": "dist/*",
+      "use": "@vercel/static",
+      "config": {
+      "memory": 2024
+    }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}

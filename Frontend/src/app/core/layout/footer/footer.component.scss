@@ -1,0 +1,49 @@
+$greyish: #545454;
+$blackish: #2a2e32;
+
+body {
+    background: #2a2e32;
+}
+
+.bot{
+    position: absolute;
+        bottom: 0;
+        width: 100%;
+}
+
+.text-small {
+    font-size: 0.9rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+    color: white;
+}
+
+.form-control {
+    background: $blackish;
+    border-color: $greyish;
+    color: white;
+    caret-color: $greyish;
+
+    &:focus{
+        box-shadow: none;
+        border: 1px solid white;
+        border-right: none;
+    }
+}
+
+.form-control:focus {
+    background: $blackish;
+}
+
+footer {
+    background: $blackish;
+}

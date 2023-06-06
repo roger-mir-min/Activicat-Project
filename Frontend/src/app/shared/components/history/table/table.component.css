@@ -1,0 +1,10 @@
+table {
+  width: 95%;
+}
+
+.mat-column-nom, .mat-column-punts,
+.mat-column-errors, .mat-column-data, .mat-column-revisar,
+.mat-column-repetir {
+  text-align: center;
+  width: 16.67%;
+}/*# sourceMappingURL=table.component.css.map */
