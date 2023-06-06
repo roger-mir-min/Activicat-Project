@@ -15,7 +15,7 @@ import { environment } from 'src/environments/environment';
 })
 export class TeacherHistoryComponent implements OnInit {
 
-  webUrl = environment.webUrl;
+  webUrl = environment.APP_URL;
 
   switchTable(val: boolean) {
   if (val == true) {
