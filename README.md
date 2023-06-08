@@ -13,8 +13,8 @@ Backend: API with NodeJS - Express. It uses Bcrypt, JWT, Multer, PM2. Deplyed in
 2. Install node_modules with "npm i" command
 
 ## Usage
-You can just navigate to the exercises list ("Activitats"), select the category>theme>exercise. Complete the exercise. Before submitting, you can check how many errors you have ("Comprova"). After submitting, you can see the corrections, the gotten points and advance to next exercise.<br>
-You can signup - signin as a student or teacher. After signing in, you will be redirected to student / teacher dashboard. Teacher uses have also access to students features / dashboard (top-right corner of teacher dashboard).<br>
+You can just navigate to the exercises list ("Activitats"), select the category>theme>exercise. Complete the exercise. Before submitting, you can check how many errors you have ("Comprova"). After submitting, you can see the corrections, the gotten points and advance to next exercise.<br><br>
+You can signup - signin as a student or teacher. After signing in, you will be redirected to student / teacher dashboard. Teacher uses have also access to students features / dashboard (top-right corner of teacher dashboard).<br><br>
 -Student dashboard
   --first section left: access to homework (given by teachers), history and last incomplete exercise (right)
   --first section right: achievements (points and medals)
