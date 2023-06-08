@@ -1,0 +1,30 @@
+<form #form="ngForm" (ngSubmit)="openModal()" class="d-flex flex-column justify-content-center w-100">
+  <h5>Posa aquesta activitat de deures</h5>
+  
+  <!-- input select group -->
+  <label for="grupInput">Tria un grup</label>
+  <select class="form-select" [(ngModel)]="selectedGrup" name="grup" id="grupInput">
+  <option *ngFor="let grup of (grups$ | async)" [value]="grup['id_grup']">
+    {{grup['nom']}}
+  </option>
+  </select>
+
+   <!-- input datepicker -->
+  <label for="datetimeInput">Escull dia i hora</label>
+  <input class="form-control" type="datetime-local" id="datetimeInput" name="datetime" [(ngModel)]="datetime">
+
+  <!-- input nom-descripció deures -->
+  <label for="descrDeures">Descripció deures:</label>
+  <input id="descrDeuresInput" type="text" class="form-control" name="descrDeures" [(ngModel)]="descrDeures">
+
+  <button type="submit" class="mt-2 btn btn-primary-dark">Enviar</button>
+
+  <confirmation-modal #confirmationModalLeave (newConfirmationEvent)="onSubmit(form)"
+    [modalStyle]="modalStyle"
+    [modalTitle]="modalTitle" 
+    [modalBody]="modalBody"
+    [modalButtonColor]="modalButtonColor"
+    [successMessage]="successMessage">
+  </confirmation-modal>
+  
+</form>

@@ -1,0 +1,78 @@
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "./variables_subset";
+
+//COLORS 
+$main-100: $indigo-100;
+$main-200: $indigo-200;
+$main-300: $indigo-300;
+$main-600: $indigo-600;
+$main-dark: $indigo-800;
+$primary: rgb(54, 226, 97);
+$primary-dark: rgb(19, 80, 34);
+$complementary: #fd9b0d;
+$complementary-dark: #fd9d0dd5;
+
+//BACKGROUND
+$background-img: linear-gradient(-30deg, white, $main-200);
+
+//LINKS
+$link-color: $main-dark;
+$link-hover-color: $main-200;
+
+//add custom colors to theme-colors
+$theme-colors: map-merge($theme-colors, (
+    "main-100": $main-100,
+    "main-200": $main-200,
+    "main-300": $main-300,
+    "main-600": $main-600,
+    "main-dark": $main-dark,
+    "primary": $primary,
+    "primary-dark": $primary-dark,
+    "complementary": $complementary,
+    "complementary-dark": $complementary-dark,
+    "ortografia-200": $ortografia-200,
+    "ortografia-300": $ortografia-300,
+    "ortografia-400": $ortografia-400,
+    "ortografia-500": $ortografia-500,
+    "ortografia-600": $ortografia-600,
+    "ortografia-800": $ortografia-800,
+    "ortografia": $ortografia,
+    "gramàtica-200": $gramàtica-200,
+    "gramàtica-300": $gramàtica-300,
+    "gramàtica-400": $gramàtica-400,
+    "gramàtica-500": $gramàtica-500,
+    "gramàtica-600": $gramàtica-600,
+    "gramàtica-800": $gramàtica-800,
+    "gramàtica": $gramàtica,
+    "literatura-200": $literatura-200,
+    "literatura-300": $literatura-300,
+    "literatura-400": $literatura-400,
+    "literatura-500": $literatura-500,
+    "literatura-600": $literatura-600,
+    "literatura-800": $literatura-800,
+    "literatura": $literatura,
+    "dialectes-200": $dialectes-200,
+    "dialectes-300": $dialectes-300,
+    "dialectes-400": $dialectes-400,
+    "dialectes-500": $dialectes-500,
+    "dialectes-600": $dialectes-600,
+    "dialectes-800": $dialectes-800,
+    "dialectes": $dialectes
+));
+
+//add $blues palette from ...bootstrap/scss/_variables.scss to theme-colors
+//remember that blue-0 is primary
+@each $key,
+$color in $blues {
+    $theme-colors: map-merge($theme-colors,
+        ($key: $color));
+}
+
+@each $key,
+$color in $indigos {
+    $theme-colors: map-merge($theme-colors,
+        ($key: $color));
+}
+
+@import "../../node_modules/bootstrap/scss/variables";

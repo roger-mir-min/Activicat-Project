@@ -1,0 +1,143 @@
+<div
+  class="wrapper m-4 p-3 bg-indigo-300 rounded mx-3 mx-sm-auto"
+>
+  <h5 class="text-center mb-3">
+    Configuració del perfil <i class="fa-solid fa-gear"></i>
+  </h5>
+  <div class="row gx-sm-0 gx-md-3 gx-lg-4">
+    <div class="col-10 col-sm-5 mx-auto">
+
+      <div>Nom: {{ (currentUser$|async).nom }}</div>
+      <form [formGroup]="nomForm">
+        <div class="form-outline mb-4">
+          <label class="form-label text-grey" for="form3Example1c"
+            >Canviar nom <i class="fa-regular fa-user"></i>
+          </label>
+          <input
+            type="text"
+            class="form-control mb-3"
+            formControlName="inputNom"
+            id="inputNom"
+            placeholder="nou nom"
+            [class.is-invalid]="
+              nomForm.get('inputNom')!.invalid &&
+              nomForm.get('inputNom')!.touched
+            "
+          />
+          <button
+            type="" (click)="openModal('nom')"
+            class="btn btn-primary btn-block mb-4 w-100"
+            [disabled]="!nomForm.valid"
+          >
+            Canvia el nom
+          </button>
+        </div>
+      </form>
+
+  <!--IMATGE BÉ-->
+<form [formGroup]="imgForm" (ngSubmit)="onImgSubmit()" class="mb-4 mb-sm-0">
+  <input type="file" id="profileImage" (change)="onFileSelect($event)">
+  <label for="profileImage" class="form-label cursor-pointer hover-600">
+    Clica'm per pujar una imatge <i class="fa-regular fa-file-image" #imgIcon></i>
+  </label>
+  <div class="text-center">
+    <span *ngIf="(previewImage$|async) as previewImage" class="rounded-circle me-3">
+      <img [src]="previewImage" alt="User image" height="38px" width="38" class="d-inline mx-auto mb-3 rounded-circle">
+    </span>
+    <span class="">
+      <img [src]="userImage$|async" alt="User image" height="38px" width="38" class="d-inline mx-auto mb-3">
+    </span>
+  </div>
+  <button type="submit" class="btn btn-primary btn-block mb-4 w-100">Canvia la imatge</button>
+</form>
+
+    </div>
+
+    <div class="col-10 col-sm-5 mx-auto">
+      <span>Email: {{ (currentUser$|async).email }}</span>
+      <form [formGroup]="emailForm">
+        <div class="form-outline mb-4">
+          <label class="form-label text-grey" for="inputEmail">
+            Canviar email<i
+              class="fas fa-envelope fa-lg me-3 fa-fw text-grey"
+            ></i
+          ></label>
+          <input
+            type="text"
+            class="form-control mb-3"
+            id="inputEmail"
+            formControlName="inputEmail"
+            placeholder="nova_adreça@elect.com"
+            [class.is-invalid]="
+              nomForm.get('inputNom')!.invalid &&
+              nomForm.get('inputNom')!.touched
+            "
+          />
+          <button
+            type=""
+            (click)="openModal('email')"
+            class="btn btn-primary btn-block mb-4 w-100"
+            [disabled]="!emailForm.valid"
+          >
+            Canvia l'adreça electr.
+          </button>
+        </div>
+      </form>
+
+
+      <!--KEY FORM-->
+      <form
+        [formGroup]="keyForm"
+      >
+        <div class="form-outline mb-4">
+          <!--INPUT KEY-->
+          <label class="form-label text-grey" for="inputKey"
+            >Canviar contrasenya
+            <i class="fas fa-key fa-lg me-3 fa-fw text-grey"></i
+          ></label>
+          <input
+            type="password"
+            id="inputKey"
+            class="form-control mb-3"
+            formControlName="inputKey"
+            placeholder="*********"
+            [class.is-invalid] = "keyForm.get('inputKey')!.invalid && keyForm.get('inputKey')!.touched"
+          />
+          <div *ngIf="(getKey!.invalid && getKey!.touched) || getKey!.dirty">
+        <small *ngIf="getKey!.hasError!('required')" class="text-danger">Escriu una contrasenya.</small>
+        <small *ngIf="getKey!.hasError!('minlength')" class="text-danger">La contrasenya ha de tenir entre 8 i 20 caràcters.</small>
+      </div>
+
+      <!--INPUT REPKEY-->
+    <div class="form-outline mb-4">
+      <input type="password" id="inputRepKey" class="form-control" formControlName="inputRepKey" placeholder="*********" [class.is-invalid] = "keyForm.get('inputRepKey')!.invalid && keyForm.get('inputRepKey')!.touched"/>
+      <div *ngIf="(getRepKey!.invalid && getRepKey!.touched) || getRepKey!.dirty">
+        <small *ngIf="getRepKey!.hasError!('required')" class="text-danger">Confirma la contrasenya.</small>
+        <small *ngIf="getRepKey!.hasError!('minlength')" class="text-danger">La contrasenya ha de tenir entre 8 i 20 caràcters.</small>
+        <small *ngIf="getRepKey!.hasError!('confValidator')" class="text-danger">Les dues contrasenyes han de coincidir.</small>
+      </div>
+      <label class="form-label text-grey" for="inputRepKey">Confirma la contrasenya <i class="fas fa-key fa-lg me-3 fa-fw text-grey"></i></label>
+    </div>
+
+          <button
+            type=""
+            (click)="openModal('key')"
+            class="btn btn-primary btn-block mb-4 w-100"
+            [disabled]="!keyForm.valid"
+          >
+            Canvia la contrasenya
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+    <confirmation-modal #confirmationModalLeave (newConfirmationEvent)="onSubmit($event)" [modalStyle]="modalStyle"
+    [modalTitle]="modalTitle" 
+    [modalBody]="modalBody"
+    [modalButtonColor]="modalButtonColor" 
+    [isInputModal]="isInputModal"
+    [successMessage]="successMessage">
+  </confirmation-modal>
+</div>

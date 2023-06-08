@@ -1,0 +1,54 @@
+<ng-template #confirmationModal let-c="close" let-d="dismiss">
+  <div class="modal-header {{ modalStyle }}">
+    <h5 class="modal-title" id="modal-title">
+      {{ modalTitle }}
+    </h5>
+    <button
+      type="button"
+      class="close"
+      aria-describedby="modal-title"
+      (click)="d('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <!-- confirmation-modal.component.html -->
+<div class="modal-body">
+  <p *ngIf="isAskForConfirmationModal">
+    {{ modalBody }}
+    <ng-container *ngIf="isInputModal">
+      <input type="password" [(ngModel)]="inputValue">
+    </ng-container>
+  </p>
+  <p *ngIf="!isAskForConfirmationModal">
+    {{ successMessage }}
+  </p>
+</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-outline-secondary"
+    (click)="d('Cross click')"
+    *ngIf="isAskForConfirmationModal"
+  >
+    Cancel·la
+  </button>
+  <button
+    type="button"
+    class="btn {{ modalButtonColor }}"
+    (click)="c('Save click')"
+    *ngIf="isAskForConfirmationModal"
+  >
+    D'acord
+  </button>
+  <button
+    type="button"
+    class="btn btn-outline-secondary"
+    (click)="d('Cross click')"
+    *ngIf="!isAskForConfirmationModal"
+  >
+    Tanca
+  </button>
+</div>
+
+</ng-template>

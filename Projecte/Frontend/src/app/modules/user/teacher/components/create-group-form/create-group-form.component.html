@@ -1,0 +1,36 @@
+<div class="row text-primary-dark">
+	<div class="col">
+		<div ngbDropdown class="d-inline-block">
+			<button type="button" class="btn btn-outline-primary-dark" id="dropdownForm1" ngbDropdownToggle>
+				Crea un grup
+			</button>
+			<div ngbDropdownMenu aria-labelledby="dropdownForm1">
+				<form class="px-4 py-3" #form="ngForm" (ngSubmit)="createGroup(form.value)">
+					<div class="mb-3">
+						<label for="nomNewGrup">Nom del grup</label>
+						<input
+							type="text"
+							class="form-control"
+							id="nomNewGrup"
+              name="nomNewGrup"
+              [(ngModel)]="nomNewGrup"
+							placeholder="Grup A"
+						/>
+					</div>
+					<div class="mb-3">
+						<label for="descrNewGrup">Descripció</label>
+						<input
+							type="text"
+							class="form-control"
+							id="descrNewGrup"
+              name="descrNewGrup"
+							placeholder="Grup de català"
+              [(ngModel)]="descrNewGrup"
+						/>
+					</div>
+					<button type="submit" class="btn btn-primary">Crea grup</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

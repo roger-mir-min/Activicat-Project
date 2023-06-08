@@ -1,0 +1,50 @@
+// import { Component, OnInit } from '@angular/core';
+// import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+// import { Exercici } from 'src/app/shared/models/interfaces';
+
+// @Component({
+//   selector: 'app-ex-type-orderDrag',
+//   templateUrl: './ex-type-orderDrag.component.html',
+//   styleUrls: ['./ex-type-orderDrag.component.scss']
+// })
+// export class ExTypeOrderDragComponent implements OnInit {
+
+
+//   //Exercici arriba de servei - API
+//   ex: Exercici = { punts: 10, frases: [{ start: "5" }, { start: "4" }, { start: "3" }, {start: "2"}, { start: "1" }] };
+//   //Array de paraules
+//   arrayDrag: string[] = [];
+
+//   answerIsValid: boolean;
+
+//   ngOnInit() {
+//     //Create a copy of the array frases and sort it randomly
+//     const frasesCopy = [...this.ex.frases];
+//     function randomSort(a, b) {
+//     return Math.random() - 0.5;
+//     }
+//     frasesCopy.sort(randomSort);
+
+//     //Push the new elements into arrayDrag array
+//     frasesCopy.forEach((word) => {
+//       this.arrayDrag.push(word.start);
+//     })
+//   }
+
+//   drop(event: CdkDragDrop<string[]>) {
+//     moveItemInArray(this.arrayDrag, event.previousIndex, event.currentIndex);
+//     //Create compArray with all the words in the original order
+//     const compArray: string[] = [];
+//     this.ex.frases.forEach((frase) => {
+//       compArray.push(frase.start);
+//     });
+//     //If compArray is equal to arrayDrag array, the answer is correct
+//       if (this.arrayDrag.toString() == compArray.toString()) {
+//         console.log("Resposta CORRECTA");
+//         this.answerIsValid = true;
+//       }else{
+//         console.log("Resposta incorrecta");
+//         this.answerIsValid = false;
+//       }
+//   }
+// }

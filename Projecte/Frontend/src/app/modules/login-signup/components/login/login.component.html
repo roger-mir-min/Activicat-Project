@@ -1,0 +1,59 @@
+<div class="row g-0 justify-content-center mt-3">
+  <div class="col-10 col-sm-7 col-md-6 col-lg-4">
+<form class="mt-4 mt-lg-5 custom-form" [formGroup]="logForm" (ngSubmit)="submit(logForm.value)">
+    <h3 class="mb-4">Identifica't per gaudir de tots els avantages d'<span class="text-principal text-patua text-primary">ActiviCat</span></h3>
+
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+    <input type="email" id="inputEmail" class="form-control" formControlName="inputEmail" [class.is-invalid] = "logForm.get('inputEmail')!.invalid && logForm.get('inputEmail')!.touched"/>
+    <div *ngIf="(getEmail!.invalid && getEmail!.touched)">
+      <small *ngIf="getEmail!.hasError!('required')" class="text-danger">Escriu una adreça electrònica.</small>
+      <small *ngIf="getEmail!.hasError!('pattern')" class="text-danger">Escriu una adreça electrònica vàlida.</small>
+    </div>
+    <label class="form-label text-grey" for="inputEmail">Adreça electrònica <i class="fas fa-envelope fa-lg me-3 fa-fw text-grey"></i></label>
+  </div>
+
+  <!-- Password input -->
+  <div class="form-outline mb-4">
+    <input type="password" id="inputKey" class="form-control" formControlName="inputKey" [class.is-invalid] = "logForm.get('inputKey')!.invalid && logForm.get('inputKey')!.touched"/>
+    <div *ngIf="(getKey!.invalid && getKey!.touched) || getKey!.dirty">
+    <small *ngIf="logForm.get('inputKey')!.hasError('required')" class="text-danger">Escriu una contrasenya</small></div>
+    <label class="form-label text-grey" for="inputKey">Contrasenya <i class="fas fa-key fa-lg me-3 fa-fw text-grey"></i></label>
+  </div>
+
+  <div class="mt-5">
+  <div> <span *ngIf="userNotFoundError" class="text-danger text-min-h">Adreça electrònica o contrasenya incorrecta.</span></div>
+
+    <div>
+      <!-- Simple link -->
+      <a class="text-grey hover cursor-pointer text-underline">Has oblidat la contrasenya?</a>
+    </div>
+
+  <!-- Submit button -->
+  <button type="submit" [disabled]="!logForm.valid" class="btn btn-primary btn-block mb-4 w-100"><span class="text-white">Identifica't</span></button>
+
+
+  <!-- Register buttons -->
+  <div class="text-center text-grey">
+    <h5>Encara no t'has registrat? <a routerLink="/signup" class="hover text-principal">Registra't</a></h5>
+    <!-- <p>o entra amb:</p>
+    <button type="button" class="btn btn-link btn-floating mx-1 text-grey hover">
+      <i class="fa-brands fa-facebook"></i>
+    </button>
+
+    <button type="button" class="btn btn-link btn-floating mx-1 text-grey hover">
+      <i class="fab fa-google"></i>
+    </button>
+
+    <button type="button" class="btn btn-link btn-floating mx-1 text-grey hover">
+      <i class="fab fa-twitter"></i>
+    </button>
+
+    <button type="button" class="btn btn-link btn-floating mx-1 text-grey hover">
+      <i class="fab fa-github"></i>
+    </button> -->
+  </div>
+  </div>
+</form>
+</div>
+</div>

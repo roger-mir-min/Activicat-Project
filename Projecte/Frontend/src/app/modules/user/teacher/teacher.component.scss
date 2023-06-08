@@ -1,0 +1,23 @@
+@import '/src/styles/variables';
+
+section{
+    padding: 3em 0;
+}
+
+.card-img-top{
+    width: 100%;
+    height: 14em;
+    object-fit: cover;
+}
+
+div.card.bg-primary>.card-footer {
+    border-top: 1px solid $primary-dark;
+}
+
+.btn.btn-indigo-200{
+    color: $main-dark;
+}
+
+.btn.btn-primary{
+    color: $primary-dark;
+}

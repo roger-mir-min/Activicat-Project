@@ -1,0 +1,33 @@
+@import '/src/styles/variables';
+
+.table-container {
+    overflow-x: auto;
+}
+
+.hover-600:hover{
+    color: $main-600;
+}
+
+input[type="radio"].indigo{
+    accent-color: $main-dark; //color del botó radio
+}
+
+.mat-column-nom,
+.mat-column-detalls,
+.mat-column-grup,
+.mat-column-link,
+.mat-column-eliminar{
+    text-align: center;
+    width: 19%;
+}
+
+.mat-column-link{
+    text-align: center;
+    width: 24%;
+}
+
+@media screen and (max-width: 768px) {
+    .table-container {
+        padding: 0 1rem;
+    }
+}

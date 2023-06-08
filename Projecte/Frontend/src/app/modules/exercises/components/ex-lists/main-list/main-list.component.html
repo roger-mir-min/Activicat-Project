@@ -1,0 +1,11 @@
+<div class="mx-3 mx-md-4 mx-lg-5">
+  <h2 class="mt-5 mb-4 ms-3">Escull un tema i comença a practicar</h2>
+  <div class="fila-sup d-flex flex-column flex-sm-row">
+  <app-ambit [ambitEntry]="{key: 'ortografia', value: ambits.get('ortografia')}" class="col p-3 mb-2 ortog-acc"></app-ambit>
+  <app-ambit [ambitEntry]="{key: 'gramàtica', value: ambits.get('gramàtica')}" class="col p-3 mb-2 gram-acc"></app-ambit>
+  </div>
+  <div class="fila-inf d-flex flex-column flex-sm-row">
+  <app-ambit [ambitEntry]="{key: 'dialectes', value: ambits.get('dialectes')}" class="col p-3 mb-2 dial-acc"></app-ambit>
+  <app-ambit [ambitEntry]="{key: 'literatura', value: ambits.get('literatura')}" class="col p-3 lite-acc"></app-ambit>
+  </div>
+</div>

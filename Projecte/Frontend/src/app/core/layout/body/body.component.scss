@@ -1,0 +1,90 @@
+/* Shrinking the sidebar from 250px to 80px and center aligining its content*/
+.openbtn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: auto;
+    height: 1.6em;
+    transform: rotate();
+}
+
+// #mySidebar.active button {
+//     transform: rotate(180deg);
+// }
+
+// #mySidebar {
+//     display: none;
+//     text-align: center;
+//     height: 92vh;
+//     width: 0px;
+//     position: sticky;
+//     z-index: 1;
+//     top: 8vh;
+//     left: 0;
+//     background-color: #111;
+//     overflow-x: hidden;
+//     transition: 0.5s;
+//     padding-top: 60px;
+// }
+
+// #mySidebar.active {
+//     display: visible;
+//     width: 15%;
+// }
+
+// #mySidebar.notActive {
+//     display: visible;
+//     width: 30px;
+// }
+
+// #mySidebar ul li {
+//     text-align: left;
+//     display: none;
+// }
+
+// #mySidebar.active ul li {
+//     display: block;
+// }
+
+// #mySidebar.notActive ul li {
+//     display: none;
+// }
+
+// #mySidebar ul li img {
+//     text-align: left;
+//     display: none;
+// }
+
+// #mySidebar.active ul li img {
+//     display: block;
+// }
+
+// #mySidebar.notActive ul li img {
+//     display: none;
+// }
+
+/* Toggling the sidebar header content, hide the big heading [h3] and showing the small heading [strong] and vice versa*/
+
+#main {
+    margin-top: 3.7em;
+    margin-left: 0%;
+    transition: 0.5s;
+}
+
+#main.active {
+    // margin-left: 15%;
+    transition: 0.5s;
+}
+
+#main.notActive {
+    margin-left: 30px;
+    transition: 0.5s;
+}
+
+ul {
+    color: white;
+}
+
+.img-width{
+    width: 3.125em;
+}

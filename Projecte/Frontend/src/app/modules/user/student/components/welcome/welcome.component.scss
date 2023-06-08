@@ -1,0 +1,51 @@
+@import '/src/styles/variables';
+
+//he afegit això per compensar que les "spikes" no ocupen espai per ser p-absolute
+//(per igualar altures)
+//a baix, vg. media queries; sense spikes, amb stretch per defecte n'hi ha prou
+
+.dashboard{
+    align-items: start;
+}
+
+.main-panel{
+    padding-top: 21.5px;
+    padding-bottom: 21.5px;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 14em;
+    object-fit: cover;
+}
+
+.spikes {
+    position: relative;
+}
+
+.spikes::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 0%;
+    top: 100%;
+    z-index: 10;
+    display: block;
+    height: 35px;
+    background-size: 35px 100%;
+    background-image: linear-gradient(135deg, $main-100 25%, transparent 25%), linear-gradient(225deg, $main-100 25%, transparent 25%);
+    background-position: 0 0;
+}
+
+form>button.btn-primary{
+    color: $primary-dark;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .dashboard{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+}

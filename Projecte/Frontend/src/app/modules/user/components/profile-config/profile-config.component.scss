@@ -1,0 +1,26 @@
+@import '/src/styles/_variables';
+
+.wrapper{
+    max-width: 44em;
+}
+
+.custom-file-upload {
+    padding: 10px;
+    background-color: $primary;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.custom-file-upload:hover {
+    background-color: $primary;
+}
+
+#profileImage{
+    display: none;
+}
+
+.form-label.hover-600{
+    vertical-align: bottom;
+}

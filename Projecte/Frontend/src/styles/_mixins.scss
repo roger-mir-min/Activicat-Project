@@ -1,0 +1,12 @@
+//Mixin to apply hover effect to buttons
+@mixin btn-custom-styles($color-key, $color-value) {
+    .btn-#{$color-key} {
+        transition: 1s !important;
+
+        &:hover {
+            background-color: $white !important;
+            color: $color-value !important;
+            transition: 1s !important;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-ex-type-relate',
+  templateUrl: './ex-type-relate.component.html',
+  styleUrls: ['./ex-type-relate.component.scss']
+})
+export class ExTypeRelateComponent{
+
+wordsLeft = ['Palabra 1', 'Palabra 2', 'Palabra 3'];
+  wordsRight = ['Expresión 1', 'Expresión 2', 'Expresión 3'];
+  lines = [];
+  currentLine = null;
+
+  onMouseDown(event, word) {
+    if (!event.target.classList.contains('word')) return;
+    const { offsetX, offsetY } = event;
+    this.currentLine = { x1: offsetX, y1: offsetY, x2: offsetX, y2: offsetY, word };
+  }
+
+  onMouseMove(event) {
+    if (!this.currentLine) return;
+    const { offsetX, offsetY } = event;
+    this.currentLine.x2 = offsetX;
+    this.currentLine.y2 = offsetY;
+  }
+
+  onMouseUp(event, word) {
+    if (!this.currentLine) return;
+    if (event.target.classList.contains('word') && this.currentLine.word !== word) {
+      this.lines.push({ ...this.currentLine });
+    }
+    this.currentLine = null;
+  }
+}

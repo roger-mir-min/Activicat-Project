@@ -1,0 +1,13 @@
+@import '../../node_modules/bootstrap/scss/nav';
+@import '../../node_modules/bootstrap/scss/navbar';
+
+//NAVBAR
+$navbar-brand-font-size: $font-size-base * 2;
+$nav-link-hover-color: $main-dark !important;
+$navbar-light-color: white;
+$navbar-light-hover-color: white;
+$navbar-light-active-color: $main-300 !important;
+$navbar-light-disabled-color: white;
+$navbar-light-toggler-border-color: none;
+$navbar-toggler-focus-width: none;
+$navbar-toggler-transition: none;

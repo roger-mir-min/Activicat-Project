@@ -1,0 +1,23 @@
+<ngb-accordion #ambitAccordion="ngbAccordion" class="" [id]="ambitEntry.key">
+  <ngb-panel [id]="ambitEntry.key">
+    <ng-template ngbPanelTitle>
+      {{ambitEntry.key | titlecase}} <span [innerHTML]="ambitEntry.key | icon" class="ms-2"></span>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      <ngb-accordion #temaAccordion="ngbAccordion">
+        <ngb-panel *ngFor="let temaEntry of ambitEntry.value?.temes | keyvalue" [id]="temaEntry.key" [title]="temaEntry.key | titlecase">
+          <ng-template ngbPanelContent>
+            <div *ngFor="let subtemaEntry of temaEntry.value?.subtemes | keyvalue" class="ms-3">
+              <h4 *ngIf="subtemaEntry.key">{{ subtemaEntry.key | titlecase}}</h4>
+              <ul>
+                <li *ngFor="let exercici of subtemaEntry.value | sortBy: 'number'" class="ms-3">
+                  <a (click)="navTo('ex', exercici.id_activitat)" class="cursor-pointer hover-primary">Activitat {{ exercici.number }}</a>
+                </li>
+              </ul>
+            </div>
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>

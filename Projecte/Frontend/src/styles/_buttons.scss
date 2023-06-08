@@ -1,0 +1,22 @@
+$btn-color: $main-dark;
+
+//Apply mixin to get
+@each $key,
+$color in $blues {
+    @include btn-custom-styles($key, $color);
+}
+
+@each $key,
+$color in $indigos {
+    @include btn-custom-styles($key, $color);
+}
+
+//Apply previous mixin to themes-color
+@each $key,
+$color in $theme-colors {
+    @include btn-custom-styles($key, $color);
+}
+
+.btn {
+    color: $main-dark;
+}

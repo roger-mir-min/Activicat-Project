@@ -1,0 +1,58 @@
+<div *ngIf="(dataSource$ | async) as dataSource" class="p-3">
+<h2>Deures del grup </h2>
+
+<button *ngIf="(isChecked$ | async) == 0 else desmarca" (click)="checkDeures(1)" class="btn btn-primary mt-3">
+  Ho he revisat <i class="fa-solid fa-check"></i></button>
+<ng-template #desmarca>
+<button (click)="checkDeures(0)" class="btn btn-blue-700 mx-3">Marca com a NO revisat <i class="fa-solid fa-square-xmark"></i></button>
+</ng-template>
+
+<!--TABLE-->
+ <div class="table-container mt-3">
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="nom">
+    <th mat-header-cell *matHeaderCellDef> Nom </th>
+    <td mat-cell *matCellDef="let element"> {{element['nom_user']}} </td>
+  </ng-container>
+
+  <!-- Name Column --> 
+  <ng-container matColumnDef="punts">
+    <th mat-header-cell *matHeaderCellDef> Punts </th>
+    <td mat-cell *matCellDef="let element"> {{element['punts']}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="errors">
+    <th mat-header-cell *matHeaderCellDef> Errors </th>
+    <td mat-cell *matCellDef="let element"> {{element['num_errors']}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="data">
+    <th mat-header-cell *matHeaderCellDef> Data </th>
+    <td mat-cell *matCellDef="let element" [style.color]="(element.data>element['data_finalitzacio']) ? 'green' : 'red'"> {{formatDate(element['completed_at'])}} </td>
+  </ng-container>
+  
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="complet">
+    <th mat-header-cell *matHeaderCellDef> Complet? </th>
+    <td mat-cell *matCellDef="let element">{{element['is_completed'] == 1 ? "Sí" : "No"}}</td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="resposta">
+    <th mat-header-cell *matHeaderCellDef> Resposta </th>
+    <td mat-cell *matCellDef="let element">
+      <a *ngIf="element['resp_usuari']; else no" routerLink="../ex/{{element['activitat_id']}}" [queryParams]="{param: element['resp_usuari']}">Vg. respostes</a>
+      <ng-template #no>-</ng-template>
+      </td>
+    </ng-container>
+  
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+</div>
+</div>
+

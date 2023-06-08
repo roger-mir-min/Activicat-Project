@@ -1,0 +1,89 @@
+<div class="row g-0 justify-content-center">
+  <div class="col-10 col-lg-9">
+<form class="mt-4 mt-lg-5" [formGroup]="signupForm" (ngSubmit)="submit(signupForm.value)">
+  <h3 class="text-center">Registra't per gaudir de tots els avantatges d'<span class="text-white"><span class="text-principal text-primary text-patua">ActiviCat</span></span></h3>
+  <h5 class="mb-4 mb-md-5 text-center">Ja estàs registrat? <a routerLink="/login">Identifica't</a></h5>
+  <div class="row justify-content-between">
+      
+    <div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-0 col-lg-5">
+    <!-- Nom input -->
+      <div class="form-outline mb-4">
+        <input type="text" id="inputNom" class="form-control" formControlName="inputNom" [class.is-invalid] = "signupForm.get('inputNom')!.invalid && signupForm.get('inputNom')!.touched"/>
+        <div *ngIf="(getNom!.invalid && getNom!.touched) || getNom!.dirty">
+        <small *ngIf="getNom!.hasError!('required')" class="text-danger">Escriu un nom.</small>
+        <!-- <small *ngIf="getNom!.hasError!('pattern')" class="text-danger">Ha de ser un nom vàlid</small> -->
+      </div>
+        <label class="form-label text-grey" for="inputNom">Nom <i class="fa-solid fa-user"></i></label>
+      </div>
+
+    <!-- Email input -->
+      <div class="form-outline mb-4">
+        <input type="email" id="inputEmail" class="form-control" formControlName="inputEmail" data-testid="inputEmail" [class.is-invalid] = "signupForm.get('inputEmail')!.invalid && signupForm.get('inputEmail')!.touched"/>
+        <div *ngIf="(getEmail!.invalid && getEmail!.touched)">
+        <small *ngIf="getEmail!.hasError!('required')" class="text-danger">Escriu una adreça electrònica.</small>
+        <small *ngIf="getEmail!.hasError!('pattern')" class="text-danger">Escriu una adreça electrònica vàlida.</small>
+      </div>
+        <label class="form-label text-grey" for="inputEmail">Adreça electrònica <i class="fas fa-envelope fa-lg me-3 fa-fw text-grey"></i></label>
+      </div>
+
+      <!-- Password input -->
+      <div class="form-outline mb-4">
+        <input type="password" id="inputKey" class="form-control" formControlName="inputKey" data-testid="inputKey" [class.is-invalid] = "signupForm.get('inputKey')!.invalid && signupForm.get('inputKey')!.touched"/>
+        <div *ngIf="(getKey!.invalid && getKey!.touched) || getKey!.dirty">
+        <small *ngIf="getKey!.hasError!('required')" class="text-danger">Escriu una contrasenya.</small>
+        <small *ngIf="getKey!.hasError!('minlength')" class="text-danger">La contrasenya ha de tenir entre 8 i 20 caràcters.</small>
+      </div>
+        <label class="form-label text-grey" for="inputKey">Contrasenya <i class="fas fa-key fa-lg me-3 fa-fw text-grey"></i></label>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-0 col-lg-5 pb-5">
+    <!-- Confirm password input -->
+    <div class="form-outline mb-4">
+      <input type="password" id="inputKey2" class="form-control" formControlName="inputRepKey" data-testid="inputRepKey" [class.is-invalid] = "signupForm.get('inputRepKey')!.invalid && signupForm.get('inputRepKey')!.touched"/>
+      <div *ngIf="(getRepKey!.invalid && getRepKey!.touched) || getRepKey!.dirty">
+        <small *ngIf="getRepKey!.hasError!('required')" class="text-danger">Confirma la contrasenya.</small>
+        <small *ngIf="getRepKey!.hasError!('minlength')" class="text-danger">La contrasenya ha de tenir entre 8 i 20 caràcters.</small>
+        <small *ngIf="getRepKey!.hasError!('confValidator')" class="text-danger">Les dues contrasenyes han de coincidir.</small>
+      </div>
+      <label class="form-label text-grey" for="inputKey2">Confirma la contrasenya <i class="fas fa-key fa-lg me-3 fa-fw text-grey"></i></label>
+    </div>
+
+    <!--Select: Estudiant o professor-->
+    <div class="form-outline mb-4">
+      <select id="inputSelect" class="form-select" formControlName="inputRole">
+        <option value="0">Estudiant</option>
+        <option value="1">Professor</option>
+      </select>
+      <div *ngIf="(getRole!.invalid && getRole!.touched) || getRole!.dirty">
+        <small *ngIf="getRole!.hasError!('required')" class="text-danger">Selecciona un rol.</small>
+      </div>
+      <label for="inputSelect" class="form-label text-grey">Selecciona una de les dues opcions <i class="fa-solid fa-hand-pointer"></i></label>
+      </div>
+
+    <button type="submit" class="btn btn-primary btn-block w-100 text-white" data-testid="submitButton" [disabled]="!signupForm.valid">Registra't</button>
+    <div><span *ngIf="emailAlreadyRegistered" class="text-danger text-min-h">Adreça electrònica ja registrada.</span></div>
+  </div>
+
+    <!-- <div class="text-center text-grey">
+    <p>You can also sign up with:</p>
+    <button type="button" class="btn btn-link btn-floating mx-1">
+      <i class="fa-brands fa-facebook text-grey hover"></i>
+    </button>
+
+    <button type="button" class="btn btn-link btn-floating mx-1 text-grey hover">
+      <i class="fab fa-google"></i>
+    </button>
+
+    <button type="button" class="btn btn-link btn-floating mx-1 text-grey hover">
+      <i class="fab fa-twitter"></i>
+    </button>
+
+    <button type="button" class="btn btn-link btn-floating mx-1 text-grey hover">
+      <i class="fab fa-github"></i>
+    </button>
+  </div> -->
+</div>
+</form>
+</div>
+  </div>
