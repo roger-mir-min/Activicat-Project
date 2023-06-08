@@ -1,7 +1,9 @@
 # Activicat-Project
-My main project: a website with exercises to practice Catalan. You can sign up as student or teacher, or just practice. Frontend: Angular, RxJS. Backend: NodeJS, MySQL, AWS (EC2, RDS, S3). In progress: the graphic design is to redo and several things need to be polished.
-# Activicat-Project
-My main project: a website with exercises to practice Catalan. You can sign up as student or teacher, or just practice. Frontend: Angular, RxJS. Backend: NodeJS, MySQL, AWS (EC2, RDS, S3). In progress: the graphic design is to redo and several things need to be polished. See it deployed [here](http://activicat.cat)
+My main project: a website with exercises to practice Catalan. You can sign up as student or teacher, or just practice. In progress: the graphic design is to redo and several things need to be polished. See it deployed [here](http://activicat.cat)
+
+## Stack
+Frontend: Angular, Typescript, ngBootstrap, Angular Material, SASS
+Backend: NodeJS - Express (+ SQL + AWS: EC2, RDS, S3)
 
 # Frontend
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.5.
