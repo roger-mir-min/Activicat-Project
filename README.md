@@ -6,7 +6,7 @@ This started as the final project at IT Academy but, even after finishing my stu
 
 ## Stack
 Frontend: Angular, Typescript, ngBootstrap, Angular Material, SASS
-Backend: API with NodeJS - Express. It uses Bcrypt, JWT, Multer, PM2. Deplyed in an AWS EC2. (Database: SQL, deployed in AWS RDS. Images stored in an S3 bucket.)
+Backend: API with NodeJS - Express. It uses Bcrypt, JWT, Multer, PM2. Deployed in an AWS EC2. (Database: SQL, deployed in AWS RDS. Images stored in an S3 bucket.)
 
 ## Installing
 1. Clone this repository https://github.com/roger-mir-min/Activicat-Project
