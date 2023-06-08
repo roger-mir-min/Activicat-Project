@@ -1,6 +1,9 @@
 # Activicat-Project
 My main project: a website with exercises to practice Catalan. You can sign up as student or teacher, or just practice. In progress: the graphic design is to redo and several things need to be polished. See it deployed [here](http://activicat.cat)
 
+## Background
+This started as the final project at IT Academy but, even after finishing my studies there, it is currently my main personal project and my will is to make it grow for a long time.
+
 ## Stack
 Frontend: Angular, Typescript, ngBootstrap, Angular Material, SASS
 Backend: NodeJS - Express (+ SQL + AWS: EC2, RDS, S3)
