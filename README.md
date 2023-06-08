@@ -6,11 +6,23 @@ This started as the final project at IT Academy but, even after finishing my stu
 
 ## Stack
 Frontend: Angular, Typescript, ngBootstrap, Angular Material, SASS
-Backend: NodeJS - Express (+ SQL + AWS: EC2, RDS, S3)
+Backend: API with NodeJS - Express. It uses Bcrypt, JWT, Multer, PM2. Deplyed in an AWS EC2. (Database: SQL, deployed in AWS RDS. Images stored in an S3 bucket.)
 
 ## Installing
 1. Clone this repository https://github.com/roger-mir-min/Activicat-Project
 2. Install node_modules with "npm i" command
+
+## Usage
+You can just navigate to the exercises list ("Activitats"), select the category>theme>exercise. Complete the exercise. Before submitting, you can check how many errors you have ("Comprova"). After submitting, you can see the corrections, the gotten points and advance to next exercise.
+You can signup - signin as a student or teacher. After signing in, you will be redirected to student / teacher dashboard. Teacher uses have also access to students features / dashboard (top-right corner of teacher dashboard).
+-Student dashboard
+  --first section left: access to homework (given by teachers), history and last incomplete exercise (right)
+  --first section right: achievements (points and medals)
+  --second section: groups management. You can see in what groups you are enrolled, their information, and ask access to new groups or leave a group.
+ -Teacher dashboard:
+  --First section: homework you haven't marked for check. You can click one to see the pupils answers and results. Mark it as "checked" ("revisat") when you are finished. At the bottom of this section you can access the full history of homework you have sent to students ("Historial complet de deures").
+  --Second section: groups management: basic information, create, delete. Access a group by clicking "Ves al grup": now you can see a list of this group's students, as well as add and delete students. Check all the homework done by a student clicking on "Veure l'historial".
+
 
 # Frontend
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.5.
@@ -60,6 +72,8 @@ This API consists of five main controllers:
 - **Exercises**: Fetches activities based on various criteria (scope, topic, id, etc.)
 - **Deures_activitats (Homework_activities)**: Manages activities handled by users (activities carried out by students, homework set by teachers, etc.)
 - **Groups**: Handles the creation and management of groups by teachers.
+
+It uses Bcrypt and JWT for the encryption, multer for image management, PM2 for permanent activity.
 
 ## License and Credit
 This project is released under the GNU GPLv3 License. It was created by Roger Miret Minard in 2023.
