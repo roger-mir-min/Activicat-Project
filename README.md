@@ -21,7 +21,7 @@ You can signup - signin as a student or teacher. After signing in, you will be r
   <li>First section right: achievements (points and medals)</li>
   <li>Second section: groups management. You can see in what groups you are enrolled, their information, and ask access to new groups or leave a group.</li>
   </ul><br>
- -Teacher dashboard:<br>
+ -Teacher dashboard:
  <ul>
   <li>First section: homework you haven't marked for check. You can click one to see the pupils answers and results. Mark it as "checked" ("revisat") when you are finished. At the bottom of this section you can access the full history of homework you have sent to students ("Historial complet de deures").</li>
   <li>Second section: groups management: basic information, create, delete. Access a group by clicking "Ves al grup": now you can see a list of this group's students, as well as add and delete students. Check all the homework done by a student clicking on "Veure l'historial".</li>
