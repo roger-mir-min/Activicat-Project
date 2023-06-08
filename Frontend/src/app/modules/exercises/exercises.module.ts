@@ -13,6 +13,7 @@ import { NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
 // import { MatInputModule } from '@angular/material/input';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ExercisesComponent } from './exercises.component';
 import { MainListComponent } from './components/ex-lists/main-list/main-list.component';
@@ -47,6 +48,7 @@ const routes: Routes = [
     // MatChipsModule,
     // MatSidenavModule,
     NgbProgressbarModule,
+    NgbCollapseModule,
     // MatIconModule,
     // MatButtonModule,
     // MatSelectModule,

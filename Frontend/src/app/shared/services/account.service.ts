@@ -262,10 +262,11 @@ export class AccountService {
       return of("");
     }
 }
-  //POST
-  postUserImage(userId: string, formData: FormData): Observable<{message: string}> {
-    return this.http.post<{message: string}>(apiUrl+'profile', formData);
-  }
+//POST
+postUserImage(formData: FormData): Observable<string> {
+  return this.http.post(apiUrl + 'profile', formData, {responseType: 'text'});
+}
+
 
   //
   

@@ -228,21 +228,22 @@ onFileSelect(event) {
 }
 
 
-  onImgSubmit() {
-    const formData = new FormData();
-    if (this.imgForm.get('profileImage').value != "") {
-      formData.append('profileImage', this.imgForm.get('profileImage').value);
-      formData.append('user_id', this.accountService.currentUser.user_id.toString());
+onImgSubmit() {
+  const formData = new FormData();
+  if (this.imgForm.get('profileImage').value != "") {
+    formData.append('profileImage', this.imgForm.get('profileImage').value);
+    formData.append('user_id', this.accountService.currentUser.user_id.toString());
 
-      this.accountService.postUserImage(this.accountService.currentUser.user_id.toString(), formData).subscribe((response) => {
-        console.log(response);
-        this.updateImg.next(undefined);
-        this.updatePreviewImg.next("");
-      });
-    } else {
-      console.log("Selecciona una imatge.")
-    }
-    
+    this.accountService.postUserImage(formData).subscribe((response) => {
+      console.log(response);
+      this.updateImg.next(undefined);
+      this.updatePreviewImg.next("");
+    });
+  } else {
+    console.log("Selecciona una imatge.")
   }
+}
+
+
 
 }
