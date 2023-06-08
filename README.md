@@ -17,9 +17,9 @@ You can just navigate to the exercises list ("Activitats"), select the category>
 You can signup - signin as a student or teacher. After signing in, you will be redirected to student / teacher dashboard. Teacher uses have also access to students features / dashboard (top-right corner of teacher dashboard).<br><br>
 -Student dashboard<br>
 <ul>
-  --first section left: access to homework (given by teachers), history and last incomplete exercise (right)
-  --first section right: achievements (points and medals)
-  --second section: groups management. You can see in what groups you are enrolled, their information, and ask access to new groups or leave a group.
+  <li>--first section left: access to homework (given by teachers), history and last incomplete exercise (right)</li>
+  <li>--first section right: achievements (points and medals)</li>
+  <li>--second section: groups management. You can see in what groups you are enrolled, their information, and ask access to new groups or leave a group.</li>
   </ul><br><br>
  -Teacher dashboard:<br>
   --First section: homework you haven't marked for check. You can click one to see the pupils answers and results. Mark it as "checked" ("revisat") when you are finished. At the bottom of this section you can access the full history of homework you have sent to students ("Historial complet de deures").
