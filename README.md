@@ -8,6 +8,10 @@ This started as the final project at IT Academy but, even after finishing my stu
 Frontend: Angular, Typescript, ngBootstrap, Angular Material, SASS
 Backend: NodeJS - Express (+ SQL + AWS: EC2, RDS, S3)
 
+## Installing
+1. Clone this repository https://github.com/roger-mir-min/Activicat-Project
+2. Install node_modules with "npm i" command
+
 # Frontend
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.5.
 
